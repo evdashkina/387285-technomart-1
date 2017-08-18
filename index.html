@@ -2,20 +2,23 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet">
     <title>HTML Academy: Техномарт</title>
   </head>
   <body>
     <header class="main-header">
       <div class="header-top">
         <div class="container"> <!--Подсмотрела в своей прошлой разметке, только в барбершопе контейнеров нет, правильно ли я помню, что это для центровки? -->
-          <div class="logo-header"><a class="main-button" href="#">Техномарт</a></div><!--На главной же странице это не ссылка, вопрос: как ее оформить? И правильно ли здесь использовать div? Или тут оформить через img? -->
-          <form action="/echo" method="get">
+          <a class="main-button">Техномарт</a><!--На главной же странице это не ссылка, вопрос: как ее оформить? И правильно ли здесь использовать div? Или тут оформить через img? -->
+          <form class="form-search" action="/echo" method="get">
             <label for="search-id">Поиск:</label>
-            <input type="search" id=search-id name="search">
+            <input type="search" id="search-id" name="search">
           </form>
           <div class="user-block"> 
-            <a class="bookmarks" href="#">Закладки: </a> <!--Еще пока не знаю, как делается счетчик -->
+            <a class="bookmarks" href="#">Закладки: </a>
+            <span class="numerator">0</span> <!--Еще пока не знаю, как делается счетчик -->
             <a class="basket" href="#">Корзина:</a>
+            <span class="numerator">0</span>
             <a class="order" href="#">Оформить заказ</a> 
           </div>
         </div>
@@ -24,37 +27,36 @@
         <div class="container">
           <h1 class="head-index">Интернет-магазин строительных материалов и инструментов для ремонта</h1>
           <div class="contacts-header">
-            <div class="contacts-header phonenumber">
-              <!--здесь хочу вставить фоновым изображением значок телефона в css, и правильно ли я выбрала тег p  для записи адреса?-->
+            <span class="contacts-header-phonenumber">
               +7 (812) 555-05-55
-            </div>
+            </span>
             <p>г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8</p> 
           </div> 
-          <div class="user-id">
+          <div class="user-auth">
             <a class="login" href="#">Войти</a> <!-- вот здесь по аналогии с номером телефона может быть обернуть в дополнительный див, чтобы потом в css вставить фоном значок входа? Пока не знаю, как реализовать-->
             <a class="check-in" href="#">Регистрация</a>
           </div>
-          <nav class="main-navigation">
-            <ul class="main-navigation-list">
-              <li class="main-page-list">
-                <a class="main-page" href="#">Главная</a>
+          <nav class="main-nav">
+            <ul class="main-nav-list">
+              <li class="main-nav-item">
+                <a class="main-page">Главная</a>
               </li>
-              <li class="company-list">
+              <li class="main-nav-item">
                 <a class="company" href="#">Компания</a>
               </li>
-              <li class="main-catalog-list">
+              <li class="main-nav-item">
                 <a class="main-catalog" href="#">Каталог</a>
               </li>
-              <li class="news-list">
+              <li class="main-nav-item">
                 <a class="news" href="#">Новости</a>
               </li>
-              <li class="special-offers-list">
+              <li class="main-nav-item">
                 <a class="special-offers" href="#">Спецпредложения</a>
               </li>
-              <li class="delivery-list">
+              <li class="main-nav-item">
                 <a class="delivery" href="#">Доставка</a>
               </li>
-              <li class="main-contacts-list">
+              <li class="main-nav-item">
                 <a class="main-contacts" href="#">Контакты</a>
               </li>
             </ul>
@@ -65,29 +67,29 @@
 
     <main class="container">
       <section class="promo"> <!-- В первом варианте тут стоял див, в этот раз мне кажется, что это вполне смысловой раздел и ставлю section, при этом сомневаюсь насчет слайдера: я вообще не знаю, как его верстать:(-->
-        <div class="promo-item materials"> <!--Вот тут можно так сделать с h2? Картинки сделаю фоном в CSS.-->
-          <h2 class="head-2">Материалы</h2> 
-          <a class="materials-button" href="#">на любой вкус</a>
+        <div class="promo-item-materials"> <!--Вот тут можно так сделать с h2? Картинки сделаю фоном в CSS.-->
+          <h2 class="promo-item-title">Материалы</h2> 
+          <a class="promo-item-button" href="#">на любой вкус</a>
         </div>
-        <div class="promo-item instruments">
-          <h2 class="head-2">Инструмент</h2>
-          <a class="instruments-button" href="#">на все случаи</a>
+        <div class="promo-item-instruments">
+          <h2 class="promo-item-title">Инструмент</h2>
+          <a class="promo-item-button" href="#">на все случаи</a>
         </div>
-        <div class="promo-item equipment">
-          <h2 class="head-2">Техника</h2>
-          <a class="equipment-button" href="#">для стройки</a>
+        <div class="promo-item-equipment">
+          <h2 class="promo-item-title">Техника</h2>
+          <a class="promo-item-button" href="#">для стройки</a>
         </div>
-        <div class="promo-item perforators">
-          <h2 class="head-2">Перфораторы</h2>
-          <a class="perforators-button" href="#">открыть каталог</a>
+        <div class="promo-item-perforators">
+          <h2 class="promo-item-title">Перфораторы</h2>
+          <a class="promo-item-button" href="#">открыть каталог</a>
         </div>
-        <div class="promo-item sales">
-          <h2 class="head-2">Скидки 50%</h2>
-          <a class="sales-button" href="#">на 350 товаров</a>
+        <div class="promo-item-sales">
+          <h2 class="promo-item-title">Скидки 50%</h2>
+          <a class="promo-item-button" href="#">на 350 товаров</a>
         </div>
-        <div class="promo-item delivery">
-          <h2 class="head-2">Доставка</h2>
-          <a class="delivery-button" href="#">бесплатно</a>
+        <div class="promo-item-delivery">
+          <h2 class="promo-item-title">Доставка</h2>
+          <a class="promo-item-button" href="#">бесплатно</a>
         </div>
       </section>
       <section class="popular-goods">
@@ -95,36 +97,36 @@
           <h2 class="popular-goods-title">Популярные товары</h2>
           <a class="popular-goods-buttom" href="#">Все популярные товары</a>
         </div>
-        <article class="catalog-item sales1"> <!--Вот тут вопрос: правильно ли я решила  карточки товара разметить с помощью article?-->
-          <div class="popular-goods-img9000">
-            <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 9000">
+        <article class="catalog-item-sales1"> <!--Вот тут вопрос: правильно ли я решила  карточки товара разметить с помощью article?-->
+          <div class="catalog-item-image">
+            <img src="img/bfg9000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 9000">
           </div>
-          <h2 class="catalog-item sales1">Перфоратор BOSCH BFG 9000</h2><!--до того, как я прогнала код через валидатор у меня тут стоял спан, валидатор подсказал, что надо использовать заголовок, это собственно вопрос-продолжение к предыдущему: правильно ли я решила через article сделать карточки популярных товаров? и если правильно что тут стоит заголовок, то может его сделать h3?-->
-          <span class="catalog-item oldprice">32500 Р.</span> <!--правильно ли будет, если я классы для цен буду в каждом товаре использовать одни и те же? -->
-          <a class="catalog-item newprice" href="#">25500 Р.</a>
+          <h1 class="catalog-item-sales1">Перфоратор BOSCH BFG 9000</h1><!--до того, как я прогнала код через валидатор у меня тут стоял спан, валидатор подсказал, что надо использовать заголовок, это собственно вопрос-продолжение к предыдущему: правильно ли я решила через article сделать карточки популярных товаров? и если правильно что тут стоит заголовок, то может его сделать h3?-->
+          <span class="catalog-item-price-old">32500 Р.</span> <!--правильно ли будет, если я классы для цен буду в каждом товаре использовать одни и те же? -->
+          <span class="catalog-item-price-new" href="#">25500 Р.</span>
         </article>
-        <article class="catalog-item sales2">
-          <div class="popular-goods-img3000">
-            <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 3000">
+        <article class="catalog-item-sales2">
+          <div class="catalog-item-image">
+            <img src="img/bfg3000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 3000">
           </div>  
-          <h2 class="catalog-item sales2">Перфоратор BOSCH BFG 3000</h2>
-          <span class="catalog-item oldprice">22500 Р.</span>
-          <a class="catalog-item newprice" href="#">15500 Р.</a>
+          <h1 class="catalog-item-sales2">Перфоратор BOSCH BFG 3000</h1>
+          <span class="catalog-item-price-old">22500 Р.</span>
+          <span class="catalog-item-price-new" href="#">15500 Р.</span>
         </article>
-        <article class="catalog-item sales3">
-          <div class="popular-goods-img6000">
-            <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 6000">
+        <article class="catalog-item-sales3">
+          <div class="catalog-item-image">
+            <img src="img/bfg6000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 6000">
           </div>  
-          <h2 class="catalog-item sales3">Перфоратор BOSCH BFG 6000</h2>
-          <span class="catalog-item oldprice">30500 Р.</span>
-          <a class="catalog-item newprice" href="#">25500 Р.</a>
+          <h1 class="catalog-item-sales3">Перфоратор BOSCH BFG 6000</h1>
+          <span class="catalog-item-price-old">30500 Р.</span>
+          <span class="catalog-item-price-new" href="#">25500 Р.</span>
         </article>
-        <article class="catalog-item sales4">
-          <div class="popular-goods-img2000">
-            <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 2000">
+        <article class="catalog-item-sales4">
+          <div class="catalog-item-image">
+            <img src="img/bfg2000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 2000">
           </div>  
-          <h2 class="catalog-item sales4">Перфоратор BOSCH BFG 2000</h2>
-          <a class="catalog-item newprice" href="#">12500 Р.</a>
+          <h1 class="catalog-item-sales4">Перфоратор BOSCH BFG 2000</h1>
+          <span class="catalog-item-price-new" href="#">12500 Р.</span>
         </article>
       </section>
       <section class="popular-manufacturers"> 
@@ -136,59 +138,87 @@
         <ul class="manufacturers"> <!-- и здесь вопрос по наименованию классов-->
           <li class="manufacturers-bosch">
             <a class="manufacturers-bosch" href="#">
-              <img src="http://placehold.it/150x100" alt="BOSCH">
+              <img src="img/bosch.png" width="127" heidht="37" alt="BOSCH">
             </a>
           </li>
           <li class="manufacturers-makita">
             <a class="manufacturers-makita" href="#">
-              <img src="http://placehold.it/150x100" alt="Makita">
+              <img src="img/makita.png" width="123" heidht="40" alt="Makita">
             </a>
           </li>
           <li class="manufacturers-dewalt">
             <a class="manufacturers-dewalt" href="#">
-              <img src="http://placehold.it/150x100" alt="Dewalt">
+              <img src="img/dewalt.png" width="146" heidht="44" alt="Dewalt">
             </a>
           </li>
           <li class="manufacturers-interskol">
             <a class="manufacturers-interskol" href="#">
-              <img src="http://placehold.it/150x100" alt="Interskol">
+              <img src="img/interskol.png" width="184" heidht="32" alt="Interskol">
             </a>
           </li>
           <li class="manufacturers-hitachi">
             <a class="manufacturers-hitachi" href="#">
-              <img src="http://placehold.it/150x100" alt="Hitachi">
+              <img src="img/hitachi.png" width="169" heidht="31" alt="Hitachi">
             </a>
           </li>
           <li class="manufacturers-lg">
             <a class="manufacturers-lg" href="#">
-              <img src="http://placehold.it/150x100" alt="LG">
+              <img src="img/lg.png" width="121" heidht="73" alt="LG">
             </a>
           </li>
           <li class="manufacturers-aeg">
             <a class="manufacturers-aeg" href="#">
-              <img src="http://placehold.it/150x100" alt="AEG">
+              <img src="img/aeg.png" width="151" heidht="96" alt="AEG">
             </a>
           </li>
           <li class="manufacturers-metabo">
             <a class="manufacturers-metabo" href="#">
-              <img src="http://placehold.it/150x100" alt="Metabo">
+              <img src="img/metabo.png" width="204" heidht="69" alt="Metabo">
             </a>
           </li>
         </ul>  
       </section>
       <section class="services">
         <h2 class="services-index">Сервисы</h2>
-        <p> Хороший интернет-магазин отличается от плохого не только ценами! <br>
+        <p> Хороший интернет-магазин отличается от плохого не только ценами!
         Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.
         </p>
         <ul class="services-menu"> <!-- Вот тут у меня загвоздка: как сделать так чтобы при нажатой "Доставке" отображался текст с описанием сервиса? Т.е. как сделать слайдер? -->
-          <li><a class="delivery-item" href="#">Доставка</a></li>
-          <li><a class="warranty-item" href="#">Гарантия</a></li>
-          <li><a class="credit-item" href="#">Кредит</a></li>
+          <li><!--<a class="delivery-item" href="#">Доставка</a>-->
+            <input type="radio" name="services" id="delivery-id">
+            <label for="delivery-id">Доставка</label>
+            <div class="services-menu-content">
+              <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж!
+              </p>
+             <!--Исходя из семинара по фотошопу картинка машинки тут контентное изображение, вставляю: -->
+             <img src="img/delivery.jpg" width="468" heidht="261" alt="Доставка">
+            </div>
+          </li>
+          <li> <!--<a class="warranty-item" href="#">Гарантия</a>-->
+            <input type="radio" name="services" id="guarantee-id">
+            <label for="guarantee-id">Гарантия</label>
+            <div class="services-menu-content">
+              <p>Если купленный у нас товар поломается или заискрит, 
+              а также в случае пожара, спровоцированного его возгаранием,  вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. 
+              Дом уж восстановите как-нибудь сами
+              </p>
+              <img src="img/guarantee.jpg" width="389" heidht="283" alt="Гарантия">
+            </div>
+          </li>
+          <li><!--<a class="credit-item" href="#">Кредит</a>-->
+            <input type="radio" name="services" id="credit-id">
+            <label for="credit-id">Кредит</label>
+            <div class="services-menu-content">
+              <p>Залезть в долговую яму стало проще! 
+              Кредитные консультанты придут вам на помощь.
+              </p>
+              <img src="img/credit.jpg" width="465" heidht="285" alt="Кредит">
+              <a class="credit-buttom" href="#">Отправить заявку</a>
+            </div>
+          </li>
         </ul>
-        <img src="http://placehold.it/150x100" alt="Доставка">
       </section>
-      <div class="about-us"> <!--Вот здесь у меня тоже есть подозрение, что лучше использовать section для этих разделов -->
+      <section class="about-us"> <!--Вот здесь у меня тоже есть подозрение, что лучше использовать section для этих разделов -->
         <h2 class="about-us-title">Компания "Техномарт"</h2>
         <p> Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и <br> 
         строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.
@@ -202,15 +232,15 @@
           <li>ЖелДорЭкспедиция</li>
         </ul>
         <a class="details-button" href="#">Подробнее о компании</a>
-      </div>
-      <div class="contacts">
+      </section>
+      <section class="contacts">
         <h2 class="contacts-title">Контакты</h2>
         <p>Вы можете забрать товар сами, <br>
         заехав в наш офис:
         </p>
-        <img src="http://placehold.it/150x100" alt="Карта"> <!--Пока интерактивную карту вставила просто картинкой -->
+        <img src="img/map-small.png" width="300" heidht="158" alt="Карта"> <!--Пока интерактивную карту вставила просто картинкой -->
         <a class="contact-adress" href="#">Заблудились? Напишите нам</a>
-      </div>
+      </section>
     </main>
 
 
@@ -221,39 +251,37 @@
             <a class="footer-main-button" href="#">Техномарт</a> <!-- здесь название класса в ссылке может быть сделать main-button как в хедере и стили отличные прописать через каскадность?-->
           </div>    
           <p class="adress-footer">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55</p> 
-          <nav class="main-footer-navigation"> 
-            <ul class="footer-navigation">
-              <li>
-                <a class="footer-company" href="#">Компания</a>
-              </li>
-              <li>
-                <a class="footer-news" href="#">Новости</a>
-              </li>
-              <li>
-                <a class="footer-catalog" href="#">Каталог</a>
-              </li>
-              <li>
-                <a class="footer-delivery" href="#">Доставка</a>
-              </li>
-              <li>
-                <a class="footer-contact" href="#">Контакты</a>
-              </li>
-            </ul>
-            <ul class="footer-subcatalog">
-              <li>
-                <a class="subcatalog-materials" href="#"> Материалы</a>
-              </li>
-              <li>
-                <a class="subcatalog-equipment" href="#">Техника</a>
-              </li>
-              <li>
-                <a class="subcatalog-instrument" href="#">Инструмент</a>
-              </li>
-              <li>
-                <a class="subcatalog-sales" href="#">Спецпредложения</a>
-              </li>
-            </ul>
-          </nav>  
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-company" href="#">Компания</a>
+            </li>
+            <li>
+              <a class="footer-news" href="#">Новости</a>
+            </li>
+            <li>
+              <a class="footer-catalog" href="#">Каталог</a>
+            </li>
+            <li>
+              <a class="footer-delivery" href="#">Доставка</a>
+            </li>
+            <li>
+              <a class="footer-contact" href="#">Контакты</a>
+            </li>
+          </ul>
+          <ul class="footer-subcatalog">
+            <li>
+              <a class="subcatalog-materials" href="#"> Материалы</a>
+            </li>
+            <li>
+              <a class="subcatalog-equipment" href="#">Техника</a>
+            </li>
+            <li>
+              <a class="subcatalog-instrument" href="#">Инструмент</a>
+            </li>
+            <li>
+              <a class="subcatalog-sales" href="#">Спецпредложения</a>
+            </li>
+          </ul> 
         </div>
       </div>
       <div class="footer-bottom">
@@ -284,5 +312,28 @@
         </div>
       </div>
     </footer>
+    <!-- Тут начинается модальные окна-->
+    <section class="modal modal-write-us">
+      <form class="write-us-form" action="https://echo.htmlacademy.ru" method="post">
+         <p>
+          <label for="name-id">Ваше имя:</label>
+          <input class="name-user" type="text" name="name" id="name-id" placeholder="Представьтесь, пожалуйста">
+        </p>
+        <p>
+          <label for="email-id">Ваш e-mail:</label>
+          <input class="email" type="text" name="email" placeholder="Для отправки ответа">
+        </p>
+        <p>
+          <label for="taxt-id">Текст письма:</label>
+          <textarea name="text-letter" id="text-id" rows="10">В свободной форме</textarea>
+        </p>
+        <button class="button" type="submit">Отправить</button>
+      </form>
+      <span class="modal-close">x</span>
+    </section>
+    <section class="modal modal-map">
+      <h2 class="visually-hidden">Как до нас добраться</h2>
+      <span class="modal-close">x</span>
+    </section>
   </body>
 </html>

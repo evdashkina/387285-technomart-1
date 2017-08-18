@@ -2,22 +2,23 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <link href="css/style.css" rel="stylesheet">
     <title>HTML Academy: Техномарт</title>
   </head>
   <body>
     <header class="main-header">
       <div class="header-top">
         <div class="container">
-          <div class="logo-header">
-           <a class="main-button" href="index.html">Техномарт</a>
-          </div><!--На главной же странице это не ссылка, вопрос: как ее оформить? И правильно ли здесь использовать div? Или тут оформить через img? -->
-          <form action="/echo" method="get">
+          <a class="main-button" href="index.html">Техномарт</a><!--На главной же странице это не ссылка, вопрос: как ее оформить? И правильно ли здесь использовать div? Или тут оформить через img? -->
+          <form class="form-search" action="/echo" method="get">
             <label for="search-id">Поиск:</label>
-            <input type="search" id=search-id name="search">
+            <input type="search" id="search-id" name="search">
           </form>
           <div class="user-block"> 
-            <a class="bookmarks" href="#">Закладки: </a> <!--Еще пока не знаю, как делается счетчик -->
-            <a class="basket" href="#">Корзина: 10</a>
+            <a class="bookmarks" href="#">Закладки: </a> 
+            <span class="numerator">0</span>
+            <a class="basket" href="#">Корзина: </a>
+            <span class="numerator">10</span>
             <a class="order" href="#">Оформить заказ</a> 
           </div>
         </div>
@@ -26,46 +27,46 @@
         <div class="container">
           <h1 class="head-index">Интернет-магазин строительных материалов и инструментов для ремонта</h1>
           <div class="contacts-header">
-            <div class="contacts-header phonenumber">
+            <span class="contacts-header-phonenumber">
               +7 (812) 555-05-55
-            </div>
+            </span>
             <p>г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8</p> 
           </div> 
-          <div class="auth">
-            <div class="user-name">
-              <a class="user-name" href="#">Равшан Джамшутович</a>
-              <a class="logout" href="#"><img src="http://placehold.it/150x100" alt="Выход"></a><!-- Думаю тут должен стоять именно img для значка выхода, хотя есть сомнения: может все таки через css делать??-->
+          <div class="user-auth">
+            <div class="user-logged-in">
+              <a class="user-logged-in" href="#">Равшан Джамшутович</a>
+              <a class="logout" href="#">Выход</a>
             </div>
-            <ul class="personal-area">
+            <ul class="user-menu">
               <li>
-                <a class="personal-area-order" href="#">Мои заказы</a>
+                <a class="user-menu-order" href="#">Мои заказы</a>
               </li>
               <li>
-                <a class="personal-area-office" href="#">Личный кабинет</a>
+                <a class="user-menu-office" href="#">Личный кабинет</a>
               </li> 
             </ul>   
           </div>
-          <nav class="main-navigation">
-            <ul class="main-navigation-list">
-              <li class="main-page-list">
+          <nav class="main-nav">
+            <ul class="main-nav-list">
+              <li class="main-nav-item">
                 <a class="main-page" href="#">Главная</a>
               </li>
-              <li class="company-list">
+              <li class="main-nav-item">
                 <a class="company" href="#">Компания</a>
               </li>
-              <li class="main-catalog-list current"> <!--добавила класс для обозначения, что мы находимся сейчас в этом пункте основной навигации -->
+              <li class="main-nav-item-current"> <!--добавила класс для обозначения, что мы находимся сейчас в этом пункте основной навигации -->
                 <a class="main-catalog" href="#">Каталог</a>
               </li>
-              <li class="news-list">
+              <li class="main-nav-item">
                 <a class="news" href="#">Новости</a>
               </li>
-              <li class="special-offers-list">
+              <li class="main-nav-item">
                 <a class="special-offers" href="#">Спецпредложения</a>
               </li>
-              <li class="delivery-list">
+              <li class="main-nav-item">
                 <a class="delivery" href="#">Доставка</a>
               </li>
-              <li class="main-contacts-list">
+              <li class="main-nav-item">
                 <a class="main-contacts" href="#">Контакты</a>
               </li>
             </ul>
@@ -91,7 +92,7 @@
       </div>
       <section class="filter">
         <h2 class="filter-title">Фильтр:</h2>
-        <form action="/echo" method="post">
+        <form class="main-form"  action="/echo" method="post">
           <h3 class="price-title">Цена:</h3> <!--есть сомнения в правильности выбора заголовков -->
           <div class="range-filter"> <!--Вот тут я откровенно скопировала html код одного из заданий-->
             <div class="range-controls">
@@ -106,30 +107,27 @@
               до <input class="max-price" type="text" value="30000" name="max-price">
             </div>
           </div>
-        </form>  
-         <!-- Вот тут у меня начинается большой вопрос: в одной форме два филдсета делать или две формы с разными методами?-->
-        <form class="filter" method="get" action="https://echo.htmlacademy.ru">
           <fieldset>
             <legend>Производители:</legend>
             <ul>
               <li class="filter-option">
-                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id=bosch-id name="bosch">
-                <label for="bosch-id">Bosch</label> <!-- Подумала, что здесь нужен label, ошибаюсь?-->
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="bosch-id" name="bosch">
+                <label for="bosch-id">Bosch</label>
               </li>
               <li class="filter-option">
-                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id=interskol-id name="interskol">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="interskol-id" name="interskol">
                 <label for="interskol-id">Интерскол</label>
               </li>
               <li class="filter-option">
-                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id=makita-id name="makita">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="makita-id" name="makita">
                 <label for="makita-id">Makita</label>
               </li>
               <li class="filter-option">
-                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id=dewalt-id name="dewalt">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="dewalt-id" name="dewalt">
                 <label for="dewalt-id">Dewalt</label>
               </li> 
               <li class="filter-option"> 
-                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id=hitachi-id name="hitachi">
+                <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" id="hitachi-id" name="hitachi">
                 <label for="hitachi-id">Hitachi</label>
               </li>  
             </ul>
@@ -138,11 +136,11 @@
              <legend>Питание:</legend>
              <ul>
                <li class="filter-option">
-                 <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power" value="accumulator" id=power-id>
+                 <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power" value="accumulator" id="power-id">
                  <label for="power-id">Аккумуляторные</label>
                </li>
                <li class="filter-option"> 
-                 <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power" value="network" id=network-id>
+                 <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power" value="network" id="network-id">
                  <label for="network-id">Сетевые</label>
                </li>
              </ul>
@@ -150,152 +148,201 @@
            <button type="submit" class="filter-button button">Показать</button>    
         </form>
        </section>
-       <section class="catalog-view">
-         <h3>Сортировка:</h3>
+       <section class="catalog">
+         <div class="sorting">
+           <h3>Сортировка:</h3>
            <!-- Здесь делаю обычными ссылками, но подозреваю, что это не правильно и не знаю, как сделать сортировочные треугольнички-->
-         <ul class="sorting-ul">
-           <li class="current">
-             <a class="sort-price" href="#">По цене</a>
-           </li>
-           <li>
-             <a class="sort-type" href="#">По типу</a>
-           </li>
-           <li>
-             <a class="sort-functional" href="#">По функционалу</a>
-           </li>
-         </ul>
-         <ul class="sorting-button">
-           <li><a></a></li>
-           <li><a></a></li>
-         </ul>
-       </section>
-       <section class="main-catalog">
+           <ul class="sorting-ul">
+             <li class="current">
+               <a class="sort-price" href="#">По цене</a>
+             </li>
+             <li>
+               <a class="sort-type" href="#">По типу</a>
+             </li>
+             <li>
+               <a class="sort-functional" href="#">По функционалу</a>
+             </li>
+           </ul>
+           <ul class="sorting-button"> <!--Здесь не знаю как вставлять треугольнички сортировки -->
+             <li><a></a></li>
+             <li><a></a></li>
+           </ul>
+         </div>
+         <div class="main-catalog">
          <ul class=catalog-list>
+         <!-- ПЕРВЫЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 3000</a>
              </h4>
              <p class="catalog-item-image">
-               <a href="catalog-item.html">
-                 <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 3000">
+               <a href="catalog-item.html"> <!-- А вот здесь нужна ли ссылка? Потому что при наведении появляются две кнопки, может, просто картинку оставить?-->
+                 <img src="img/bfg3000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 3000">
                </a>  
              </p>
+             <p class="catalog-item-action"> 
+               <a class="button" href="#">Купить</a>
+               <a class="button-bookmark" href="#">В закладки</a>
+             </p>
              <p class="catalog-item-price">
-               <span class="catalog-item oldprice">22500 Р.</span> <!--Или здесь лучше вместо спана тег b использовать? -->
-               <a class="button" href="#">15500 Р.</a>
+               <span class="catalog-item-price-old">22500 Р.</span> 
+               <span class="catalog-item-price-new">15500 Р.</span>
              </p>
            </li>
-
+           <!-- ВТОРОЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 6000</a>
              </h4>
              <p class="catalog-item-image">
                <a href="catalog-item.html">
-                 <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 6000">
+                 <img src="img/bfg6000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 6000">
                </a>  
              </p>
+             <p class="catalog-item-action"> 
+               <a class="button" href="#">Купить</a>
+               <a class="button-bookmark" href="#">В закладки</a>
+             </p>
              <p class="catalog-item-price">
-               <span class="catalog-item oldprice">30500 Р.</span>
-               <a class="button" href="#">25500 Р.</a>
+               <span class="catalog-item-price-old">30500 Р.</span>
+               <span class="catalog-item-price-new">25500 Р.</span>
              </p>
            </li>
              <!-- Третью карточку делаю по аналогии с первыми двумя, но тут загвоздка: есть метка NEW и я не знаю как ее добавлять: через img или это фоновое изображение?-->
+
+             <!-- ТРЕТИЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 2000</a>
              </h4>
-             <p class="catalog-item-button"> <!-- думаю значок корзины добавлять через css-->
+             <p class="catalog-item-image">
+               <a href="catalog-item.html">
+                 <img src="img/bfg2000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 2000">
+               </a>  
+             </p>
+             <p class="catalog-item-action"> 
                <a class="button" href="#">Купить</a>
-               <a class="button-bookmark">В закладки</a>
+               <a class="button-bookmark" href="#">В закладки</a>
              </p>
              <p class="catalog-item-price">
-               <a class="button" href="#">25500 Р.</a>
+               <span class="catalog-item-price-new">12500 Р.</span>
              </p>
            </li>
+           <!-- ЧЕТВЕРТЫЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 3000</a>
              </h4>
              <p class="catalog-item-image">
                <a href="catalog-item.html">
-                 <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 3000">
+                 <img src="img/bfg3000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 3000">
                </a>  
              </p>
+             <p class="catalog-item-action"> 
+               <a class="button" href="#">Купить</a>
+               <a class="button-bookmark" href="#">В закладки</a>
+             </p>
              <p class="catalog-item-price">
-               <span class="catalog-item oldprice">22500 Р.</span>
-               <a class="button" href="#">15500 Р.</a>
+               <span class="catalog-item-price-old">22500 Р.</span>
+               <span class="catalog-item-price-new">15500 Р.</span>
              </p>
            </li>
+           <!-- ПЯТЫЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 6000</a>
              </h4>
              <p class="catalog-item-image">
                <a href="catalog-item.html">
-                 <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 6000">
+                 <img src="img/bfg6000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 6000">
                </a>  
              </p>
+             <p class="catalog-item-action"> 
+               <a class="button" href="#">Купить</a>
+               <a class="button-bookmark" href="#">В закладки</a>
+             </p>
              <p class="catalog-item-price">
-               <span class="catalog-item oldprice">30500 Р.</span>
-               <a class="button" href="#">25500 Р.</a>
+               <span class="catalog-item-price-old">30500 Р.</span>
+               <span class="catalog-item-price-new">25500 Р.</span>
              </p>
            </li>
+           <!-- ШЕСТОЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 2000</a>
              </h4>
              <p class="catalog-item-image">
                <a href="catalog-item.html">
-                 <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 2000">
+                 <img src="img/bfg2000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 2000">
                </a>  
              </p>
+             <p class="catalog-item-action"> 
+               <a class="button" href="#">Купить</a>
+               <a class="button-bookmark" href="#">В закладки</a>
+             </p>
              <p class="catalog-item-price">
-               <a class="button" href="#">12500 Р.</a>
+               <span class="catalog-item-price-new">12500 Р.</span>
              </p>
            </li>
+           <!-- СЕДЬМОЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 3000</a>
              </h4>
              <p class="catalog-item-image">
                <a href="catalog-item.html">
-                 <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 3000">
+                 <img src="img/bfg3000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 3000">
                </a>  
              </p>
+             <p class="catalog-item-action"> 
+               <a class="button" href="#">Купить</a>
+               <a class="button-bookmark" href="#">В закладки</a>
+             </p>
              <p class="catalog-item-price">
-               <span class="catalog-item oldprice">22500 Р.</span>
-               <a class="button" href="#">15500 Р.</a>
+               <span class="catalog-item-price-old">22500 Р.</span>
+               <span class="catalog-item-price-new">15500 Р.</span>
              </p>
            </li>
+           <!-- ВОСЬМОЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 6000</a>
              </h4>
              <p class="catalog-item-image">
                <a href="catalog-item.html">
-                 <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 6000">
+                 <img src="img/bfg6000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 6000">
                </a>  
              </p>
+             <p class="catalog-item-action"> 
+               <a class="button" href="#">Купить</a>
+               <a class="button-bookmark" href="#">В закладки</a>
+             </p>
              <p class="catalog-item-price">
-               <span class="catalog-item oldprice">30500 Р.</span>
-               <a class="button" href="#">25500 Р.</a>
+               <span class="catalog-item-price-old">30500 Р.</span>
+               <span class="catalog-item-price-new">25500 Р.</span>
              </p>
            </li>
+           <!-- ДЕВЯТЫЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 2000</a>
              </h4>
              <p class="catalog-item-image">
                <a href="catalog-item.html">
-                 <img src="http://placehold.it/150x100" alt="Перфоратор BOSCH BFG 2000">
+                 <img src="img/bfg2000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 2000">
                </a>  
              </p>
+             <p class="catalog-item-action"> 
+               <a class="button" href="#">Купить</a>
+               <a class="button-bookmark" href="#">В закладки</a>
+             </p>
              <p class="catalog-item-price">
-               <a class="button" href="#">12500 Р.</a>
+               <span class="catalog-item-price-new">12500 Р.</span>
              </p>
            </li>
          </ul>
+         </div>
+
          <ul class="pagination-list">
            <li class="pagination-item pagination-item-current">
              <a>1</a>
@@ -306,61 +353,59 @@
            <li class="pagination-item">
              <a href="#">3</a>
            </li>
-           <li class="pagination-item pagination-item-next">
+           <li class="pagination-item-next">
              <a href="#">Следующая</a>
            </li>
          </ul>
        </section>
-       <article class="presentation">
+       <section class="presentation">
         <h2>Пара слов о перфораторах</h2>
         <p>Перфоратор - универсальный строительный инструмент. Предназначен для сверления и долбления отверстий в кирпиче, бетоне и камне.
         </p>
         <p>Существуют электромеханические пневматические перфораторы. Современные модели могут выполнять функции дрели, шуруповерта и отбойного молотка. в ассортиментном ряду есть выбор "трехрежимников": в одном устройстве будут совмещены отбойный молоток и ударная дрель.
         </p>
-      </article>
+      </section>
     </main>  
 
 
-    <footer class="main-footer">
+     <footer class="main-footer">
       <div class="footer-top">
         <div class="container">
           <div class="logo-footer">
-            <a class="footer-main-button" href="index.html">Техномарт</a> <!-- здесь название класса в ссылке может быть сделать main-button как в хедере и стили отличные прописать через каскадность?-->
+            <a class="footer-main-button" href="#">Техномарт</a> <!-- здесь название класса в ссылке может быть сделать main-button как в хедере и стили отличные прописать через каскадность?-->
           </div>    
           <p class="adress-footer">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55</p> 
-          <nav class="main-footer-navigation"> 
-            <ul class="footer-navigation">
-              <li>
-                <a class="footer-company" href="#">Компания</a>
-              </li>
-              <li>
-                <a class="footer-news" href="#">Новости</a>
-              </li>
-              <li>
-                <a class="footer-catalog" href="#">Каталог</a>
-              </li>
-              <li>
-                <a class="footer-delivery" href="#">Доставка</a>
-              </li>
-              <li>
-                <a class="footer-contact" href="#">Контакты</a>
-              </li>
-            </ul>
-            <ul class="footer-subcatalog">
-              <li>
-                <a class="subcatalog-materials" href="#"> Материалы</a>
-              </li>
-              <li>
-                <a class="subcatalog-equipment" href="#">Техника</a>
-              </li>
-              <li>
-                <a class="subcatalog-instrument" href="#">Инструмент</a>
-              </li>
-              <li>
-                <a class="subcatalog-sales" href="#">Спецпредложения</a>
-              </li>
-            </ul>
-          </nav>  
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-company" href="#">Компания</a>
+            </li>
+            <li>
+              <a class="footer-news" href="#">Новости</a>
+            </li>
+            <li>
+              <a class="footer-catalog" href="#">Каталог</a>
+            </li>
+            <li>
+              <a class="footer-delivery" href="#">Доставка</a>
+            </li>
+            <li>
+              <a class="footer-contact" href="#">Контакты</a>
+            </li>
+          </ul>
+          <ul class="footer-subcatalog">
+            <li>
+              <a class="subcatalog-materials" href="#"> Материалы</a>
+            </li>
+            <li>
+              <a class="subcatalog-equipment" href="#">Техника</a>
+            </li>
+            <li>
+              <a class="subcatalog-instrument" href="#">Инструмент</a>
+            </li>
+            <li>
+              <a class="subcatalog-sales" href="#">Спецпредложения</a>
+            </li>
+          </ul> 
         </div>
       </div>
       <div class="footer-bottom">
@@ -391,5 +436,14 @@
         </div>
       </div>
     </footer>
+    <!-- Добавила модальное окно Пожалуйста, посмотри-->
+    <section class="modal modal-basket">
+      <h2 class="modal-basket-title">Товар добавлен в корзину!</h2>
+      <div class="modal-basket-buttons">
+        <a class="modal-basket-buttons-1" href="basket.html">Оформить заказ</a>
+        <a class="modal-basket-buttons-2" href="#">Продолжить покупки</a> 
+      </div>
+      <span class="modal-close">x</span>
+    </section>
   </body>
 </html>
