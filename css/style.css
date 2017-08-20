@@ -3,19 +3,19 @@ body {
 	line-height: 24px;
 	color: #000000;
 	font-weight: normal;
-	font-family: "Cuprum", sans-serif;
+	font-family: "Cuprum", "Arial", sans-serif;
 }
 .head-index {
 	font-size: 16px;
 	line-height: 23px;
 	color: #ff5357;
 	font-style: italic;
-	font-family: "Cuprum", sans-serif;
+	font-family: "Cuprum", "Arial", sans-serif;
 }
 .promo-item-title {
 	font-size: 24px;
 	line-height: 30px;
 	color: #ffffff;
 	font-weight: bold;
-	font-family: "Cuprum", sans-serif;
+	font-family: "Cuprum", "Arial", sans-serif;
 }
