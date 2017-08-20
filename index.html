@@ -8,8 +8,8 @@
   <body>
     <header class="main-header">
       <div class="header-top">
-        <div class="container"> <!--Подсмотрела в своей прошлой разметке, только в барбершопе контейнеров нет, правильно ли я помню, что это для центровки? -->
-          <a class="main-button">Техномарт</a><!--На главной же странице это не ссылка, вопрос: как ее оформить? И правильно ли здесь использовать div? Или тут оформить через img? -->
+        <div class="container">
+          <a class="main-button">Техномарт</a>
           <form class="form-search" action="/echo" method="get">
             <label for="search-id">Поиск:</label>
             <input type="search" id="search-id" name="search">
@@ -66,8 +66,8 @@
     </header>
 
     <main class="container">
-      <section class="promo"> <!-- В первом варианте тут стоял див, в этот раз мне кажется, что это вполне смысловой раздел и ставлю section, при этом сомневаюсь насчет слайдера: я вообще не знаю, как его верстать:(-->
-        <div class="promo-item-materials"> <!--Вот тут можно так сделать с h2? Картинки сделаю фоном в CSS.-->
+      <section class="promo"> 
+        <div class="promo-item-materials"> 
           <h2 class="promo-item-title">Материалы</h2> 
           <a class="promo-item-button" href="#">на любой вкус</a>
         </div>
@@ -79,9 +79,30 @@
           <h2 class="promo-item-title">Техника</h2>
           <a class="promo-item-button" href="#">для стройки</a>
         </div>
-        <div class="promo-item-perforators">
-          <h2 class="promo-item-title">Перфораторы</h2>
-          <a class="promo-item-button" href="#">открыть каталог</a>
+        <!-- СДЕЛАЛА ПОДОБИЕ СЛАЙДЕРА:) не знаю как сделать стрелочки переключения-->
+        <div class="slider">
+          <input type="radio" id="btn-1" name="toggle" checked>
+          <input type="radio" id="btn-2" name="toggle">
+          <div class="slider-controls">
+            <label for="btn-1"></label>
+            <label for="btn-2"></label>
+          </div>
+          <div class="slides">
+            <div class="slide">
+              <div class="slide-text">
+                <div class="slide-title">Перфораторы</div> <!-- Может здесь лучше использовать h?-->
+                <p>Настоящие мужские игрушки</p> <!--а тут лучше использовать b?-->
+                <a class="slide-button" href="#">Открыть каталог</a>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-text">
+                <div class="slide-title">Дрели</div>
+                <p>Соседям на радость!</p>
+                <a class="slide-button" href="#">Открыть каталог</a>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="promo-item-sales">
           <h2 class="promo-item-title">Скидки 50%</h2>
@@ -97,44 +118,60 @@
           <h2 class="popular-goods-title">Популярные товары</h2>
           <a class="popular-goods-buttom" href="#">Все популярные товары</a>
         </div>
-        <article class="catalog-item-sales1"> <!--Вот тут вопрос: правильно ли я решила  карточки товара разметить с помощью article?-->
-          <div class="catalog-item-image">
-            <img src="img/bfg9000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 9000">
-          </div>
-          <h1 class="catalog-item-sales1">Перфоратор BOSCH BFG 9000</h1><!--до того, как я прогнала код через валидатор у меня тут стоял спан, валидатор подсказал, что надо использовать заголовок, это собственно вопрос-продолжение к предыдущему: правильно ли я решила через article сделать карточки популярных товаров? и если правильно что тут стоит заголовок, то может его сделать h3?-->
-          <span class="catalog-item-price-old">32500 Р.</span> <!--правильно ли будет, если я классы для цен буду в каждом товаре использовать одни и те же? -->
-          <span class="catalog-item-price-new" href="#">25500 Р.</span>
-        </article>
-        <article class="catalog-item-sales2">
-          <div class="catalog-item-image">
-            <img src="img/bfg3000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 3000">
-          </div>  
-          <h1 class="catalog-item-sales2">Перфоратор BOSCH BFG 3000</h1>
-          <span class="catalog-item-price-old">22500 Р.</span>
-          <span class="catalog-item-price-new" href="#">15500 Р.</span>
-        </article>
-        <article class="catalog-item-sales3">
-          <div class="catalog-item-image">
-            <img src="img/bfg6000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 6000">
-          </div>  
-          <h1 class="catalog-item-sales3">Перфоратор BOSCH BFG 6000</h1>
-          <span class="catalog-item-price-old">30500 Р.</span>
-          <span class="catalog-item-price-new" href="#">25500 Р.</span>
-        </article>
-        <article class="catalog-item-sales4">
-          <div class="catalog-item-image">
-            <img src="img/bfg2000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 2000">
-          </div>  
-          <h1 class="catalog-item-sales4">Перфоратор BOSCH BFG 2000</h1>
-          <span class="catalog-item-price-new" href="#">12500 Р.</span>
-        </article>
+        <ul class="catalog">
+          <li class="catalog-item">
+              <p class="catalog-item-image">
+                <a class="description" href="#"><img src="img/bfg9000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 9000"></a>
+              </p>
+              <h1 class="catalog-item-sales1"><a class="description" href="#">Перфоратор BOSCH BFG 9000</a></h1>
+              <p>
+                <span class="catalog-item-price-old">32500 Р.</span> 
+                <span class="catalog-item-price-new" href="#">25500 Р.</span>
+              </p>
+            </article>
+          </li>
+          <li class="catalog-item">
+            <article class="catalog-item-sales2">
+              <p class="catalog-item-image">
+                <a class="description" href="#"><img src="img/bfg3000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 3000"></a>
+              </p>  
+              <h1 class="catalog-item-sales2"><a class="description" href="#">Перфоратор BOSCH BFG 3000</a></h1>
+              <p>
+                <span class="catalog-item-price-old">22500 Р.</span>
+                <span class="catalog-item-price-new" href="#">15500 Р.</span>
+              </p>  
+             </article>
+           </li>
+           <li class="catalog-item">  
+             <article class="catalog-item-sales3">
+               <p class="catalog-item-image">
+                 <a class="description" href="#"><img src="img/bfg6000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 6000"></a>
+               </p>  
+               <h1 class="catalog-item-sales3"><a class="description" href="#">Перфоратор BOSCH BFG 6000</a></h1>
+               <p>
+                 <span class="catalog-item-price-old">30500 Р.</span>
+                 <span class="catalog-item-price-new" href="#">25500 Р.</span>
+               </p>  
+             </article>
+           </li>
+           <li class="catalog-item">
+             <article class="catalog-item-sales4">
+               <p class="catalog-item-image">
+                 <a class="description" href="#"><img src="img/bfg2000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 2000"></a>
+               </p>  
+               <h1 class="catalog-item-sales4"><a class="description" href="#">Перфоратор BOSCH BFG 2000</a></h1>
+               <p>
+                 <span class="catalog-item-price-new" href="#">12500 Р.</span>
+               </p>  
+             </article>
+           </li>
+         </ul>
       </section>
       <section class="popular-manufacturers"> 
         <div class="content-header">
           <h2 class="popular-manufacturers-title">Популярные производители</h2>
           <a class="popular-manufacturers-buttom" href="#">Все производители</a>
         </div>
-        <!--в прошлый раз каждого производителя записала в див: заголовок и картинка ссылкой, в этот раз решила оформить списком: какой вариант удачнее?-->
         <ul class="manufacturers"> <!-- и здесь вопрос по наименованию классов-->
           <li class="manufacturers-bosch">
             <a class="manufacturers-bosch" href="#">
@@ -183,8 +220,8 @@
         <p> Хороший интернет-магазин отличается от плохого не только ценами!
         Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.
         </p>
-        <ul class="services-menu"> <!-- Вот тут у меня загвоздка: как сделать так чтобы при нажатой "Доставке" отображался текст с описанием сервиса? Т.е. как сделать слайдер? -->
-          <li><!--<a class="delivery-item" href="#">Доставка</a>-->
+        <ul class="services-menu"> 
+          <li>
             <input type="radio" name="services" id="delivery-id">
             <label for="delivery-id">Доставка</label>
             <div class="services-menu-content">
@@ -194,7 +231,7 @@
              <img src="img/delivery.jpg" width="468" heidht="261" alt="Доставка">
             </div>
           </li>
-          <li> <!--<a class="warranty-item" href="#">Гарантия</a>-->
+          <li> 
             <input type="radio" name="services" id="guarantee-id">
             <label for="guarantee-id">Гарантия</label>
             <div class="services-menu-content">
@@ -205,7 +242,7 @@
               <img src="img/guarantee.jpg" width="389" heidht="283" alt="Гарантия">
             </div>
           </li>
-          <li><!--<a class="credit-item" href="#">Кредит</a>-->
+          <li>
             <input type="radio" name="services" id="credit-id">
             <label for="credit-id">Кредит</label>
             <div class="services-menu-content">
@@ -218,7 +255,7 @@
           </li>
         </ul>
       </section>
-      <section class="about-us"> <!--Вот здесь у меня тоже есть подозрение, что лучше использовать section для этих разделов -->
+      <section class="about-us">
         <h2 class="about-us-title">Компания "Техномарт"</h2>
         <p> Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и <br> 
         строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.
@@ -238,7 +275,7 @@
         <p>Вы можете забрать товар сами, <br>
         заехав в наш офис:
         </p>
-        <img src="img/map-small.png" width="300" heidht="158" alt="Карта"> <!--Пока интерактивную карту вставила просто картинкой -->
+        <img src="img/map-small.png" width="300" heidht="158" alt="Карта">
         <a class="contact-adress" href="#">Заблудились? Напишите нам</a>
       </section>
     </main>
@@ -248,7 +285,7 @@
       <div class="footer-top">
         <div class="container">
           <div class="logo-footer">
-            <a class="footer-main-button" href="#">Техномарт</a> <!-- здесь название класса в ссылке может быть сделать main-button как в хедере и стили отличные прописать через каскадность?-->
+            <a class="footer-main-button" href="#">Техномарт</a>
           </div>    
           <p class="adress-footer">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55</p> 
           <ul class="footer-nav">
@@ -321,19 +358,19 @@
         </p>
         <p>
           <label for="email-id">Ваш e-mail:</label>
-          <input class="email" type="text" name="email" placeholder="Для отправки ответа">
+          <input class="email" type="text" name="email" id="email-id" placeholder="Для отправки ответа">
         </p>
         <p>
-          <label for="taxt-id">Текст письма:</label>
+          <label for="text-id">Текст письма:</label>
           <textarea name="text-letter" id="text-id" rows="10">В свободной форме</textarea>
         </p>
-        <button class="button" type="submit">Отправить</button>
+        <button class="button modal-submit" type="submit">Отправить</button>
       </form>
-      <span class="modal-close">x</span>
+      <button class="button modal-close" type="button">Закрыть</button>
     </section>
     <section class="modal modal-map">
       <h2 class="visually-hidden">Как до нас добраться</h2>
-      <span class="modal-close">x</span>
+      <button class="button modal-close" type="button">Закрыть</button>
     </section>
   </body>
 </html>
