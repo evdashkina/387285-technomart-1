@@ -2,20 +2,20 @@ body {
 	font-size: 14px;
 	line-height: 24px;
 	color: #000000;
-	font-weight: normal;
+	font-weight: 400;
+	/*Ой, а я с таким не сталкивалась, сейчас вычитала что normal соответствует число 400, правильно?*/
 	font-family: "Cuprum", "Arial", sans-serif;
 }
-.head-index {
+/*а в задании: Для заголовков задавайте текстовые стили с помощью селектора по классу. Или я что то недопоняла?*/
+.main-header-title {
 	font-size: 16px;
 	line-height: 23px;
 	color: #ff5357;
 	font-style: italic;
-	font-family: "Cuprum", "Arial", sans-serif;
 }
 .promo-item-title {
 	font-size: 24px;
 	line-height: 30px;
 	color: #ffffff;
 	font-weight: bold;
-	font-family: "Cuprum", "Arial", sans-serif;
 }

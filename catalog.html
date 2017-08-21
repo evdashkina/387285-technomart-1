@@ -9,34 +9,42 @@
     <header class="main-header">
       <div class="header-top">
         <div class="container">
-          <a class="main-button" href="index.html">Техномарт</a>
+          <a class="logo logo-header" href="index.html">Техномарт</a>
           <form class="form-search" action="/echo" method="get">
             <label for="search-id">Поиск:</label>
             <input type="search" id="search-id" name="search">
           </form>
-          <div class="user-block"> 
-            <a class="bookmarks" href="#">Закладки: </a> 
-            <span class="numerator">0</span>
-            <a class="basket" href="#">Корзина: </a>
-            <span class="numerator">10</span>
-            <a class="order" href="#">Оформить заказ</a> 
-          </div>
+          <ul class="user-block"> 
+            <li>
+              <a class="bookmarks" href="#">Закладки: <span class="numerator">0</span></a> 
+            </li>
+            <li>
+              <a class="basket" href="#">Корзина: <span class="numerator">10</span></a>
+            </li>
+            <li>
+              <a class="order" href="#">Оформить заказ</a>
+            </li>  
+          </ul>
         </div>
       </div>  
       <div class="header-bottom">
         <div class="container">
-          <h1 class="head-index">Интернет-магазин строительных материалов и инструментов для ремонта</h1>
-          <div class="contacts-header">
+          <h1 class="main-header-title">Интернет-магазин строительных материалов и инструментов для ремонта</h1>
+          <p class="main-header-contacts">
             <span class="contacts-header-phonenumber">
               +7 (812) 555-05-55
             </span>
-            <p>г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8</p> 
-          </div> 
+            г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8 
+          </p> 
           <div class="user-auth">
-            <div class="user-logged-in">
-              <a class="user-logged-in" href="#">Равшан Джамшутович</a>
-              <a class="logout" href="#">Выход</a>
-            </div>
+            <ul class="user-logged-in">
+              <li>
+                <a class="user-logged-in" href="#">Равшан Джамшутович</a>
+              </li>
+              <li> 
+                <a class="logout" href="#">Выход</a>
+              </li>
+            </ul>
             <ul class="user-menu">
               <li>
                 <a class="user-menu-order" href="#">Мои заказы</a>
@@ -93,20 +101,24 @@
       <section class="filter">
         <h2 class="filter-title">Фильтр:</h2>
         <form class="main-form"  action="/echo" method="post">
-          <h3 class="price-title">Цена:</h3> 
-          <div class="range-filter"> <!--Вот тут я откровенно скопировала html код одного из заданий-->
-            <div class="range-controls">
-              <div class="scale">
-                <div style="margin-left:50px;width:100px;" class="bar"></div>
+          <fieldset>
+            <legend class="price-title">Цена:</legend> 
+            <div class="range-filter"> <!--Вот тут я откровенно скопировала html код одного из заданий-->
+              <div class="range-controls">
+                <div class="scale">
+                  <div style="margin-left:50px;width:100px;" class="bar"></div>
+                </div>
+                <div class="toggle min-toggle"></div>
+                <div class="toggle max-toggle"></div>
               </div>
-              <div class="toggle min-toggle"></div>
-              <div class="toggle max-toggle"></div>
+    <!--ВНИМАНИЕ ТУТ. СТОЯЛ ДИВ, МАКСИМ ПРОКОМЕНТИРОВАЛ ПОМЕНЯТЬ НА Р: ПОЧЕМУ? (ВНИЗУ) -->
+
+              <p class="price-controls">
+                от <input class="min-price" type="text" value="0" name="min-price">
+                до <input class="max-price" type="text" value="30000" name="max-price">
+              </p>
             </div>
-            <div class="price-controls">
-              от <input class="min-price" type="text" value="0" name="min-price">
-              до <input class="max-price" type="text" value="30000" name="max-price">
-            </div>
-          </div>
+          </fieldset>
           <fieldset>
             <legend>Производители:</legend>
             <ul>
@@ -167,17 +179,16 @@
              <li><a></a></li>
            </ul>
          </div>
-         <div class="main-catalog">
+         <!--<div class="main-catalog"> ВООБЩЕ УБРАТЬ? или заменить на  section?-->
          <ul class=catalog-list>
          <!-- ПЕРВЫЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
+             <article>
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 3000</a>
              </h4>
-             <p class="catalog-item-image">
-               <a href="catalog-item.html"> 
+             <p class="catalog-item-image">  <!-- А здесь нужене абзац: получается только для одной картинки?-->  
                  <img src="img/bfg3000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 3000">
-               </a>  
              </p>
              <p class="catalog-item-action"> 
                <a class="button" href="#">Купить</a>
@@ -187,9 +198,11 @@
                <span class="catalog-item-price-old">22500 Р.</span> 
                <span class="catalog-item-price-new">15500 Р.</span>
              </p>
+             </article>
            </li>
            <!-- ВТОРОЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
+             <article>
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 6000</a>
              </h4>
@@ -206,9 +219,11 @@
                <span class="catalog-item-price-old">30500 Р.</span>
                <span class="catalog-item-price-new">25500 Р.</span>
              </p>
+             </article>
            </li>
              <!-- ТРЕТИЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
+             <article>
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 2000</a>
              </h4>
@@ -224,9 +239,11 @@
              <p class="catalog-item-price">
                <span class="catalog-item-price-new">12500 Р.</span>
              </p>
+             </article>
            </li>
            <!-- ЧЕТВЕРТЫЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
+             <article>
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 3000</a>
              </h4>
@@ -243,9 +260,11 @@
                <span class="catalog-item-price-old">22500 Р.</span>
                <span class="catalog-item-price-new">15500 Р.</span>
              </p>
+             </article>
            </li>
            <!-- ПЯТЫЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
+             <article>
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 6000</a>
              </h4>
@@ -262,9 +281,11 @@
                <span class="catalog-item-price-old">30500 Р.</span>
                <span class="catalog-item-price-new">25500 Р.</span>
              </p>
+             </article>
            </li>
            <!-- ШЕСТОЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
+             <article>
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 2000</a>
              </h4>
@@ -280,9 +301,11 @@
              <p class="catalog-item-price">
                <span class="catalog-item-price-new">12500 Р.</span>
              </p>
+             </article>
            </li>
            <!-- СЕДЬМОЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
+             <article>
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 3000</a>
              </h4>
@@ -299,9 +322,11 @@
                <span class="catalog-item-price-old">22500 Р.</span>
                <span class="catalog-item-price-new">15500 Р.</span>
              </p>
+             </article>
            </li>
            <!-- ВОСЬМОЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
+             <article>
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 6000</a>
              </h4>
@@ -318,9 +343,11 @@
                <span class="catalog-item-price-old">30500 Р.</span>
                <span class="catalog-item-price-new">25500 Р.</span>
              </p>
+             </article>
            </li>
            <!-- ДЕВЯТЫЙ ТОВАР В КАТАЛОГЕ-->
            <li class="catalog-item">
+             <article>
              <h4>
                <a href="catalog-item.html">Перфоратор BOSCH BFG 2000</a>
              </h4>
@@ -336,9 +363,10 @@
              <p class="catalog-item-price">
                <span class="catalog-item-price-new">12500 Р.</span>
              </p>
+             </article>
            </li>
          </ul>
-         </div>
+         <!--</div>-->
 
          <ul class="pagination-list">
            <li class="pagination-item pagination-item-current">
@@ -368,9 +396,9 @@
      <footer class="main-footer">
       <div class="footer-top">
         <div class="container">
-          <div class="logo-footer">
-            <a class="footer-main-button" href="#">Техномарт</a> <!-- здесь название класса в ссылке может быть сделать main-button как в хедере и стили отличные прописать через каскадность?-->
-          </div>    
+          
+            <a class="logo logo-footer" href="#">Техномарт</a> <!-- здесь название класса в ссылке может быть сделать main-button как в хедере и стили отличные прописать через каскадность?-->
+             
           <p class="adress-footer">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55</p> 
           <ul class="footer-nav">
             <li>
@@ -407,11 +435,11 @@
       </div>
       <div class="footer-bottom">
         <div class="container">
-          <div class="copyright"> 
+          <p class="copyright"> 
             &copy; 2010-2016 Компания "Техномарт" 
             Все права защищены
-          </div>
-          <div class="footer-social"> <!--Нужен ли тут див или можно просто список оставить? В барбершопе див, но там есть фраза: Давайте дружить! -->
+          </p>
+          
             <ul class="social">
               <li>
                 <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
@@ -423,23 +451,25 @@
                 <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
               </li>  
             </ul>  
-          </div>
-          <div class="feedback-end-madein"> <!-- насколько удачное название класса?-->
-            <p>Обратная связь:</p>
+          
+          
+            <p>Обратная связь:
             <a class="feed-back-mail" href="#">mail@htmlacademy.ru</a>
-            <p>Разработано - </p>
+            </p>
+            <p>Разработано - 
             <a class="made-in-link" href="#">htmlacademy.ru</a>
-          </div>
+            </p>
+          
         </div>
       </div>
     </footer>
     <!-- Добавила модальное окно Пожалуйста, посмотри-->
     <section class="modal modal-basket">
       <h2 class="modal-basket-title">Товар добавлен в корзину!</h2>
-      <div class="modal-basket-buttons">
-        <a class="modal-basket-buttons-1" href="basket.html">Оформить заказ</a>
-        <a class="modal-basket-buttons-2" href="#">Продолжить покупки</a> 
-      </div>
+      <p class="modal-basket-buttons">
+        <a class="modal-basket-button-1" href="basket.html">Оформить заказ</a>
+        <a class="modal-basket-button-2" href="#">Продолжить покупки</a> 
+      </p>
       <button class="modal-close" type="buttom">Закрыть</button>
     </section>
   </body>

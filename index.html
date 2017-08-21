@@ -9,7 +9,7 @@
     <header class="main-header">
       <div class="header-top">
         <div class="container">
-          <a class="main-button">Техномарт</a>
+          <a class="logo logo-header">Техномарт</a>
           <form class="form-search" action="/echo" method="get">
             <label for="search-id">Поиск:</label>
             <input type="search" id="search-id" name="search">
@@ -25,13 +25,13 @@
       </div>  
       <div class="header-bottom">
         <div class="container">
-          <h1 class="head-index">Интернет-магазин строительных материалов и инструментов для ремонта</h1>
-          <div class="contacts-header">
+          <h1 class="main-header-title">Интернет-магазин строительных материалов и инструментов для ремонта</h1>
+          <p class="main-header-contacts">
             <span class="contacts-header-phonenumber">
               +7 (812) 555-05-55
             </span>
-            <p>г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8</p> 
-          </div> 
+            г. Санкт-Петербург, ул. Б.Конюшенная, д.19/8
+          </p> 
           <div class="user-auth">
             <a class="login" href="#">Войти</a> <!-- вот здесь по аналогии с номером телефона может быть обернуть в дополнительный див, чтобы потом в css вставить фоном значок входа? Пока не знаю, как реализовать-->
             <a class="check-in" href="#">Регистрация</a>
@@ -120,6 +120,7 @@
         </div>
         <ul class="catalog">
           <li class="catalog-item">
+            <article class="catalog-item-sales1">
               <p class="catalog-item-image">
                 <a class="description" href="#"><img src="img/bfg9000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 9000"></a>
               </p>
@@ -167,6 +168,7 @@
            </li>
          </ul>
       </section>
+      <!--Поменять классы на одинаковые -->
       <section class="popular-manufacturers"> 
         <div class="content-header">
           <h2 class="popular-manufacturers-title">Популярные производители</h2>
@@ -228,7 +230,7 @@
               <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж!
               </p>
              <!--Исходя из семинара по фотошопу картинка машинки тут контентное изображение, вставляю: -->
-             <img src="img/delivery.jpg" width="468" heidht="261" alt="Доставка">
+             
             </div>
           </li>
           <li> 
@@ -239,7 +241,7 @@
               а также в случае пожара, спровоцированного его возгаранием,  вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. 
               Дом уж восстановите как-нибудь сами
               </p>
-              <img src="img/guarantee.jpg" width="389" heidht="283" alt="Гарантия">
+              
             </div>
           </li>
           <li>
@@ -249,7 +251,7 @@
               <p>Залезть в долговую яму стало проще! 
               Кредитные консультанты придут вам на помощь.
               </p>
-              <img src="img/credit.jpg" width="465" heidht="285" alt="Кредит">
+              
               <a class="credit-buttom" href="#">Отправить заявку</a>
             </div>
           </li>
@@ -284,9 +286,9 @@
     <footer class="main-footer">
       <div class="footer-top">
         <div class="container">
-          <div class="logo-footer">
-            <a class="footer-main-button" href="#">Техномарт</a>
-          </div>    
+          
+            <a class="logo logo-footer" href="#">Техномарт</a>
+             
           <p class="adress-footer">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55</p> 
           <ul class="footer-nav">
             <li>
@@ -323,11 +325,11 @@
       </div>
       <div class="footer-bottom">
         <div class="container">
-          <div class="copyright"> 
+          <p class="copyright"> 
             &copy; 2010-2016 Компания "Техномарт" 
             Все права защищены
-          </div>
-          <div class="footer-social"> <!--Нужен ли тут див или можно просто список оставить? В барбершопе див, но там есть фраза: Давайте дружить! -->
+          </p>
+        
             <ul class="social">
               <li>
                 <a class="social-btn social-btn-vk" href="#">Вконтакте</a>
@@ -339,12 +341,14 @@
                 <a class="social-btn social-btn-inst" href="#">Инстаграм</a>
               </li>  
             </ul>  
-          </div>
-          <div class="feedback-end-madein"> <!-- насколько удачное название класса?-->
-            <p>Обратная связь:</p>
+          
+         
+            <p>Обратная связь:
             <a class="feed-back-mail" href="#">mail@htmlacademy.ru</a>
-            <p>Разработано - </p>
+            </p>
+            <p>Разработано - 
             <a class="made-in-link" href="#">htmlacademy.ru</a>
+            </p>
           </div>
         </div>
       </div>
