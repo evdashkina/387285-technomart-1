@@ -2,8 +2,11 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <link href="css/style.css" rel="stylesheet">
     <title>HTML Academy: Техномарт</title>
+    <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="main-header">
@@ -14,13 +17,17 @@
             <label for="search-id">Поиск:</label>
             <input type="search" id="search-id" name="search">
           </form>
-          <div class="user-block"> 
-            <a class="bookmarks" href="#">Закладки: </a>
-            <span class="numerator">0</span> <!--Еще пока не знаю, как делается счетчик -->
-            <a class="basket" href="#">Корзина:</a>
-            <span class="numerator">0</span>
-            <a class="order" href="#">Оформить заказ</a> 
-          </div>
+          <ul class="user-block"> 
+            <li>
+              <a class="bookmarks" href="#">Закладки: <span class="numerator">0</span></a> 
+            </li>
+            <li>
+              <a class="basket" href="#">Корзина: <span class="numerator">0</span></a>
+            </li>
+            <li>
+              <a class="order" href="#">Оформить заказ</a>
+            </li>  
+          </ul>
         </div>
       </div>  
       <div class="header-bottom">
@@ -124,7 +131,7 @@
               <p class="catalog-item-image">
                 <a class="description" href="#"><img src="img/bfg9000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 9000"></a>
               </p>
-              <h1 class="catalog-item-sales1"><a class="description" href="#">Перфоратор BOSCH BFG 9000</a></h1>
+              <h1 class="catalog-item-sales"><a class="description" href="#">Перфоратор BOSCH BFG 9000</a></h1>
               <p>
                 <span class="catalog-item-price-old">32500 Р.</span> 
                 <span class="catalog-item-price-new" href="#">25500 Р.</span>
@@ -136,7 +143,7 @@
               <p class="catalog-item-image">
                 <a class="description" href="#"><img src="img/bfg3000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 3000"></a>
               </p>  
-              <h1 class="catalog-item-sales2"><a class="description" href="#">Перфоратор BOSCH BFG 3000</a></h1>
+              <h1 class="catalog-item-sales"><a class="description" href="#">Перфоратор BOSCH BFG 3000</a></h1>
               <p>
                 <span class="catalog-item-price-old">22500 Р.</span>
                 <span class="catalog-item-price-new" href="#">15500 Р.</span>
@@ -148,7 +155,7 @@
                <p class="catalog-item-image">
                  <a class="description" href="#"><img src="img/bfg6000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 6000"></a>
                </p>  
-               <h1 class="catalog-item-sales3"><a class="description" href="#">Перфоратор BOSCH BFG 6000</a></h1>
+               <h1 class="catalog-item-sales"><a class="description" href="#">Перфоратор BOSCH BFG 6000</a></h1>
                <p>
                  <span class="catalog-item-price-old">30500 Р.</span>
                  <span class="catalog-item-price-new" href="#">25500 Р.</span>
@@ -160,7 +167,7 @@
                <p class="catalog-item-image">
                  <a class="description" href="#"><img src="img/bfg2000.jpg" width="218" height="145" alt="Перфоратор BOSCH BFG 2000"></a>
                </p>  
-               <h1 class="catalog-item-sales4"><a class="description" href="#">Перфоратор BOSCH BFG 2000</a></h1>
+               <h1 class="catalog-item-sales"><a class="description" href="#">Перфоратор BOSCH BFG 2000</a></h1>
                <p>
                  <span class="catalog-item-price-new" href="#">12500 Р.</span>
                </p>  
@@ -175,42 +182,42 @@
           <a class="popular-manufacturers-buttom" href="#">Все производители</a>
         </div>
         <ul class="manufacturers"> <!-- и здесь вопрос по наименованию классов-->
-          <li class="manufacturers-bosch">
+          <li class="manufacturers-list">
             <a class="manufacturers-bosch" href="#">
               <img src="img/bosch.png" width="127" heidht="37" alt="BOSCH">
             </a>
           </li>
-          <li class="manufacturers-makita">
+          <li class="manufacturers-list">
             <a class="manufacturers-makita" href="#">
               <img src="img/makita.png" width="123" heidht="40" alt="Makita">
             </a>
           </li>
-          <li class="manufacturers-dewalt">
+          <li class="manufacturers-list">
             <a class="manufacturers-dewalt" href="#">
               <img src="img/dewalt.png" width="146" heidht="44" alt="Dewalt">
             </a>
           </li>
-          <li class="manufacturers-interskol">
+          <li class="manufacturers-list">
             <a class="manufacturers-interskol" href="#">
               <img src="img/interskol.png" width="184" heidht="32" alt="Interskol">
             </a>
           </li>
-          <li class="manufacturers-hitachi">
+          <li class="manufacturers-list">
             <a class="manufacturers-hitachi" href="#">
               <img src="img/hitachi.png" width="169" heidht="31" alt="Hitachi">
             </a>
           </li>
-          <li class="manufacturers-lg">
+          <li class="manufacturers-list">
             <a class="manufacturers-lg" href="#">
               <img src="img/lg.png" width="121" heidht="73" alt="LG">
             </a>
           </li>
-          <li class="manufacturers-aeg">
+          <li class="manufacturers-list">
             <a class="manufacturers-aeg" href="#">
               <img src="img/aeg.png" width="151" heidht="96" alt="AEG">
             </a>
           </li>
-          <li class="manufacturers-metabo">
+          <li class="manufacturers-list">
             <a class="manufacturers-metabo" href="#">
               <img src="img/metabo.png" width="204" heidht="69" alt="Metabo">
             </a>
@@ -226,17 +233,17 @@
           <li>
             <input type="radio" name="services" id="delivery-id">
             <label for="delivery-id">Доставка</label>
-            <div class="services-menu-content">
+            <div class="services-menu-content delivery">
+              <h3 class="services-title">Доставка</h3>
               <p>Мы с удовольствием доставим ваш товар прямо к вашему подъезду совершенно бесплатно! Ведь мы неплохо заработаем, поднимая его на ваш этаж!
-              </p>
-             <!--Исходя из семинара по фотошопу картинка машинки тут контентное изображение, вставляю: -->
-             
+              </p>  
             </div>
           </li>
           <li> 
             <input type="radio" name="services" id="guarantee-id">
             <label for="guarantee-id">Гарантия</label>
-            <div class="services-menu-content">
+            <div class="services-menu-content guarantee">
+              <h3 class="services-title">Гарантия</h3>
               <p>Если купленный у нас товар поломается или заискрит, 
               а также в случае пожара, спровоцированного его возгаранием,  вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. 
               Дом уж восстановите как-нибудь сами
@@ -247,7 +254,8 @@
           <li>
             <input type="radio" name="services" id="credit-id">
             <label for="credit-id">Кредит</label>
-            <div class="services-menu-content">
+            <div class="services-menu-content credit">
+              <h3 class="services-title">Кредит</h3>
               <p>Залезть в долговую яму стало проще! 
               Кредитные консультанты придут вам на помощь.
               </p>
@@ -281,14 +289,10 @@
         <a class="contact-adress" href="#">Заблудились? Напишите нам</a>
       </section>
     </main>
-
-
     <footer class="main-footer">
       <div class="footer-top">
-        <div class="container">
-          
-            <a class="logo logo-footer" href="#">Техномарт</a>
-             
+        <div class="container">  
+          <a class="logo logo-footer" href="#">Техномарт</a>  
           <p class="adress-footer">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 +7 (812) 555-05-55</p> 
           <ul class="footer-nav">
             <li>

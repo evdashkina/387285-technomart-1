@@ -1,21 +1,466 @@
+@font-face {
+    font-family: 'Cuprum';
+    src: url('../fonts/web/cuprum.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('../fonts/web/ptsans.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    src: url('../fonts/web/ptsansbold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 body {
-	font-size: 14px;
-	line-height: 24px;
-	color: #000000;
-	font-weight: 400;
-	/*Ой, а я с таким не сталкивалась, сейчас вычитала что normal соответствует число 400, правильно?*/
-	font-family: "Cuprum", "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: "Cuprum", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-nav {
+    font-size: 17px;
+    line-height: 17px;
+    color: #ffffff;
+    background-color: #32425c;
+}
+
+.main-nav-list,
+.catalog,
+.manufacturers,
+.footer-nav,
+.footer-subcatalog,
+.social,
+.user-block,
+.user-logged-in,
+.user-menu,
+.breadcrumbs
+.manufacturers-list
+.power-list
+.sorting-ul
+.sorting-button
+.catalog-list
+.pagination-list,
+.services-menu {
+    list-style: none;
+}
+
+.user-block a,
+.main-nav-list a,
+.promo a,
+.popular-goods a,
+.popular-manufacturers a,
+.services-menu a,
+.about-us a,
+.contacts a,
+.footer-nav a {
+    color: #ffffff;
+}
+
+.user-block .basket {
+    background-image: url("../img/icon-cart.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.user-block .bookmarks {
+    background-image: url("../img/icon-bookmark.svg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.header-top {
+    background-color: #293449;
+}
+
+.user-block a:hover {
+    color: #ffffff;
+}
+
+.user-block a:active {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #161d29;
+}
+
+.user-block li:last-child a:active {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: #518534;
+}
+
+
+.user-auth {
+    background-color: #ffffff;
+}
+
+.user-auth .login {
+    background-image: url("../img/icon-login.svg");
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.form-search {
+    color: #ffffff;
+    background-image: url("../img/icon-search.svg");
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+
+.main-header-contacts {
+    font-size: 14px;
+    color: #32425c;
+    background-image: url("../img/icon-phone.svg");
+    background-position: left center;
+    background-repeat: no-repeat;
+
+}
+
+.contacts-header-phonenumber {
+    font-size: 21px;
+    color: #ee3643;
+}
+
+.user-auth a {
+    font-size: 21px;
+    color: #000000;
 }
 /*а в задании: Для заголовков задавайте текстовые стили с помощью селектора по классу. Или я что то недопоняла?*/
+.logo-header {
+    font-size: 24px;
+    line-height: 24px;
+    color: #ffffff;
+    background-color: #ee3643;
+}
+
 .main-header-title {
-	font-size: 16px;
-	line-height: 23px;
-	color: #ff5357;
-	font-style: italic;
+    font-size: 16px;
+    line-height: 23px;
+    color: #ff5357;
+    font-style: italic;
 }
+
+.main-header {
+    background-color: #f3f7f9;
+    background-position: top center;
+    background-repeat: no-repeat;   
+}
+
+.promo {
+    background-color: #ffffff;
+}
+
 .promo-item-title {
-	font-size: 24px;
-	line-height: 30px;
-	color: #ffffff;
-	font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #ffffff;
+    font-weight: bold;
 }
+
+.promo-item-button {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.promo-item-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.promo-item-button:active {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.promo-item-materials {
+    background-color: #ffbf47;
+    background-image: url("../img/icon-1.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.promo-item-instruments {
+    background-color: #3bbce3;
+    background-image: url("../img/icon-2.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+
+}
+
+.promo-item-equipment {
+    background-color: #dc91d8;
+    background-image: url("../img/icon-3.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.promo-item-sales {
+    background-color: #8ed78f;
+    background-image: url("../img/icon-4.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+
+}
+
+.promo-item-delivery {
+    background-color: #ffc047;
+    background-image: url("../img/icon-5.svg");
+    background-position: right center;
+    background-repeat: no-repeat;
+
+}
+
+.content-header {
+    background-color: #f9f5f0;
+}
+
+.popular-goods-title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #32425c;
+    text-transform: uppercase;
+}
+
+.popular-goods-buttom {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: #ee3643;
+}
+
+.catalog-item-sales a {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.catalog-item-price-old {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 18px;
+    color: #a9a9a9;
+    text-decoration: line-through;
+}
+/*Вот тут у меня начинается стилизация новой цены в каталоге, как оказалось: эта красная стрелочка svg 
+изображение, я ее вставила, сделала элемент блочным, вертикальное выравнивание не работает*/
+.catalog-item-price-new {
+    display: block;
+    width: 141px;
+    height: 38px;
+    text-align: center;
+    vertical-align: middle;
+    font-family: "PT Sans", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 18px;
+    color: #ffffff;
+    background-image: url("../img/red-button.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+ .popular-manufacturers-title {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    color: #32425c;
+    text-transform: uppercase;
+ }
+
+ .popular-manufacturers-buttom {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: #ee3643;
+ }
+/*Сделала на угад бордер производителей*/
+.manufacturers a {
+    display: inline-block;
+    width: 220px;
+    height: 145px;
+    border: 1px solid #ebebeb;
+}
+
+.services {
+    background-color: #f4f8fa;
+}
+
+.services-index {
+    font-size: 30px;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.services p {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.services-title {
+    font-size: 36px;
+    line-height: 43px;
+    text-transform: uppercase;
+    color: #3d546e;
+}
+
+.services-menu label {
+    font-size: 21px;
+    line-height: 30px;
+    color: #ffffff; 
+    background-color: #3d546e;
+}
+
+.services-menu label:hover {
+    background-color: #293449;
+}
+
+.services-menu label:active {
+    color: #32425c;
+    background-color: #ffffff;
+}
+
+.services-menu-content p {
+    font-family: "PT sans", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.credit-buttom {
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #ff5357;
+}
+/* Не могу вставить картинку машинки, гарантии и кредита*/
+.services-menu .delivery {
+    background-image: url("../img/delivery.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.about-us-title {
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.about-us p {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.transport-company li {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.details-button {
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #ff5357;
+}
+
+.contacts-title {
+    font-size: 30px;
+    line-height: 36px;
+    color: #000000;
+    text-transform: uppercase;
+}
+
+.contacts p {
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 24px;
+}
+
+.contact-adress {
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #ff5357;
+}
+
+.footer-top {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #ffffff;
+    background-color: #3d546e;
+}
+
+.footer-bottom {
+    background-color: #33445a;
+}
+
+.logo-footer {
+    font-size: 30px;
+    line-height: 36px;
+    color: #ffffff;
+    background-color: #ee3643;
+}
+
+.footer-subcatalog a {
+    color: #ffd180;
+}
+
+.footer-nav a:hover, 
+.footer-subcatalog a:hover {
+    text-decoration: underline;
+}
+
+.footer-nav a:active {
+    color: rgba(241, 245, 247, 0.5);
+}
+
+.footer-subcatalog a:active {
+    color: rgba(255, 209, 128, 0.5);
+}
+
+.footer-bottom {
+    font-size: 16px;
+    line-height: 18px;
+    color: #ffffff;
+}
+
+.footer-bottom a {
+    color: #ffda96;
+}
+
+.social li{
+    font-size: 0;
+}
+/*не отображаются кнопки соц.сетей*/
+.social-btn-vk {
+    background-color: #29384a;
+    background-image: url("../img/icon-vk.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
